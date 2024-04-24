@@ -11,7 +11,7 @@ func Routes(e *echo.Echo) {
 	e.POST("/register", controllers.Register)
 
 	e.Use(middleware.CORS())
-	e.Use(middleware.Static("/uploads"))
+	e.Use(middleware.Logger())
 
 	e.GET("/students", controllers.GetStudents)
 	e.POST("/student", controllers.AddStudent)
